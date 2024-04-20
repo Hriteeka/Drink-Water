@@ -1,0 +1,114 @@
+body{
+    background-color: pink;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+h2{
+    animation: 2s blink linear infinite;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+    border-style: groove;
+}
+
+.cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 30px 0 50px rgba(0, 0, 0, 0.4);
+    transition: .6s;
+}
+
+.fonts{
+    font-family: cursive;
+    text-align: center;
+    margin: 30px;
+    background-image: linear-gradient(90deg, rgba(230,224,24,0.9248949579831933) 0%, rgba(143,214,16,1) 50%, rgba(66,242,219,1) 100%);
+    transition: .1s;
+}
+
+.cardInside{
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(22, 21, 21, 0.2);
+}
+
+.card:hover{
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(22, 21, 21, 0.2) 0 10px 100px rgba(20, 19, 19, 0.5);
+}
+
+.card:hover .cardFront{
+    transform: rotateY(-160deg);
+}
+
+.card:hover .fonts{
+    visibility: hidden;
+}
+
+p{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    margin: 15px 10px 10px 30px;
+    color: #333;
+}
+
+img{
+    margin: 10px 10px 10px 30px;
+    width: 190px;
+    height: 190px;
+}
+
+.card:hover .image1{
+    visibility: hidden;
+}
+
+footer{
+    font-size: 10px;
+    margin: 10px;
+}
+
+
+@keyframes blink{
+    0%{
+        color: white;
+    }
+    20%{
+        color: chocolate;
+    }
+    40%{
+        color: blueviolet;
+    }
+    60%{
+        color: crimson;
+    }
+    80%{
+        color: darkolivegreen;
+    }
+    100%{
+        color: cadetblue;
+    }
+}
